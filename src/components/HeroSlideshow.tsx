@@ -3,17 +3,16 @@ import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3.jpg";
 import hero4 from "@/assets/hero-4.jpg";
-
-// To replace with your own images:
-// 1. Add your images to src/assets/ (e.g., my-photo-1.jpg)
-// 2. Import them above (e.g., import myPhoto1 from "@/assets/my-photo-1.jpg")
-// 3. Replace entries in the slides array below
+import hero5 from "@/assets/hero-5.jpg";
+import hero6 from "@/assets/hero-6.jpg";
 
 const slides = [
-  { src: hero1, alt: "Safety team on construction site" },
-  { src: hero2, alt: "Safety officer inspecting warehouse" },
-  { src: hero3, alt: "Team reviewing safety documents" },
-  { src: hero4, alt: "Safety compliance documentation" },
+  { src: hero1, alt: "FC Safety team reviewing site plans" },
+  { src: hero2, alt: "FC Safety Consultants team on construction site" },
+  { src: hero3, alt: "Safety officer inspecting building site" },
+  { src: hero4, alt: "Construction site scaffolding inspection" },
+  { src: hero5, alt: "Safety officer reviewing documentation" },
+  { src: hero6, alt: "Construction site safety overview" },
 ];
 
 const HeroSlideshow = () => {
@@ -47,10 +46,9 @@ const HeroSlideshow = () => {
           FC Safety Consultants
         </h1>
         <p className="font-display text-lg font-semibold text-secondary-foreground md:text-2xl max-w-2xl drop-shadow">
-          Your Trusted Health &amp; Safety Partners in South Africa
+          Your Trusted Health &amp; Safety Consultant
         </p>
       </div>
-      {/* Dots */}
       <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-2">
         {slides.map((_, i) => (
           <button
