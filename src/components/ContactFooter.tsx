@@ -48,10 +48,15 @@ const ContactFooter = () => {
 
           <div className="space-y-4 text-safety-blue-foreground">
             <h3 className="font-display font-bold text-lg">Our Address</h3>
-            <div className="flex items-start gap-3">
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=16+Holloway+Road%2C+Clarke+Estate%2C+Elsies+River%2C+South+Africa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-3 hover:text-primary transition-colors"
+            >
               <MapPin size={18} className="mt-1 flex-shrink-0" />
               <p>16 Holloway Road, Clarke Estate, Elsies River, South Africa</p>
-            </div>
+            </a>
           </div>
         </div>
 
