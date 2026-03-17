@@ -55,8 +55,8 @@ const ContactFooter = () => {
           </div>
         </div>
 
-        <div className="border-t border-safety-blue-foreground/20 pt-8">
-          <p className="text-safety-blue-foreground/70 text-sm">
+        <div className="border-t border-black/10 pt-6">
+          <p className="text-black text-xs">
             © {new Date().getFullYear()} FC Safety Consultants Pty Ltd — All Rights Reserved
           </p>
         </div>
