@@ -23,7 +23,7 @@ const ContactFooter = () => {
             </div>
             <div className="flex items-center gap-3">
               <Phone size={18} />
-              <a href="tel:+27730623653" className="hover:text-primary transition-colors">073 062 3653 (WhatsApp)</a>
+              <a href="tel:+27730623653" className="hover:text-primary transition-colors">073 062 3653</a>
             </div>
             <div className="flex items-center gap-3">
               <svg viewBox="0 0 24 24" fill="currentColor" className="h-[18px] w-[18px] flex-shrink-0">
@@ -35,7 +35,7 @@ const ContactFooter = () => {
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors"
               >
-                +27 73 062 3653 (WhatsApp)
+                073 062 3653 (WhatsApp)
               </a>
             </div>
             <div className="flex items-center gap-3">
