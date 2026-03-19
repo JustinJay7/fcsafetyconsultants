@@ -30,15 +30,15 @@ const HeroSlideshow = () => {
       {slides.map((slide, i) => (
         <div
           key={i}
-          className="absolute inset-0 transition-opacity duration-1000 ease-in-out flex items-center justify-center px-4 md:px-8"
+          className="absolute inset-0 transition-opacity duration-1000 ease-in-out flex items-center justify-center px-3 md:px-6"
           style={{ opacity: i === current ? 1 : 0 }}
         >
           <img
             src={slide.src}
             alt={slide.alt}
-            className="h-full w-full object-cover rounded-lg"
+            className="h-full w-full rounded-lg object-fill object-center"
           />
-          <div className="absolute inset-x-4 md:inset-x-8 inset-y-0 bg-secondary/30 rounded-lg" />
+          <div className="absolute inset-x-3 md:inset-x-6 inset-y-0 bg-secondary/25 rounded-lg" />
         </div>
       ))}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
