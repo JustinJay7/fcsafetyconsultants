@@ -26,19 +26,19 @@ const HeroSlideshow = () => {
   }, []);
 
   return (
-    <section id="home" className="relative h-[70vh] md:h-[80vh] w-full overflow-hidden pt-16">
+    <section id="home" className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden pt-16 bg-secondary">
       {slides.map((slide, i) => (
         <div
           key={i}
-          className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+          className="absolute inset-0 transition-opacity duration-1000 ease-in-out flex items-center justify-center"
           style={{ opacity: i === current ? 1 : 0 }}
         >
           <img
             src={slide.src}
             alt={slide.alt}
-            className="h-full w-full object-cover object-top"
+            className="h-full w-full object-contain"
           />
-          <div className="absolute inset-0 bg-secondary/40" />
+          <div className="absolute inset-0 bg-secondary/30" />
         </div>
       ))}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
