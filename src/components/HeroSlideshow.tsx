@@ -26,7 +26,7 @@ const HeroSlideshow = () => {
   }, []);
 
   return (
-    <section id="home" className="relative h-screen w-full overflow-hidden pt-16">
+    <section id="home" className="relative h-[70vh] md:h-[80vh] w-full overflow-hidden pt-16">
       {slides.map((slide, i) => (
         <div
           key={i}
@@ -36,9 +36,9 @@ const HeroSlideshow = () => {
           <img
             src={slide.src}
             alt={slide.alt}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover object-top"
           />
-          <div className="absolute inset-0 bg-secondary/60" />
+          <div className="absolute inset-0 bg-secondary/40" />
         </div>
       ))}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
