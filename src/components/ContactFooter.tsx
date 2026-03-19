@@ -35,7 +35,7 @@ const ContactFooter = () => {
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors"
               >
-                +27 73 062 3653 (WhatsApp)
+                073 062 3653 (WhatsApp)
               </a>
             </div>
             <div className="flex items-center gap-3">
