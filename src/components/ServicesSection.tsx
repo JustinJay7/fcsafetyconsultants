@@ -4,7 +4,7 @@ import { ClipboardCheck, FileText, Search, AlertTriangle, Landmark, ScrollText }
 const services = [
   {
     icon: ClipboardCheck,
-    title: "Onsite Safety Officers",
+    title: "Safety Representatives",
     desc: "Fully registered Health and Safety officers and representatives available for onsite duty to ensure continuous compliance.",
   },
   {
@@ -32,8 +32,27 @@ const services = [
     title: "Safety Documentation",
     desc: "All necessary safety documentation and inspections needed to be compliant across various sites.",
   },
+  {
+    icon: ClipboardCheck,
+    title: "OHS Consulting",
+    desc: "Professional Occupational Health and Safety consulting services tailored to your business needs and regulatory requirements.",
+  },
+  {
+    icon: FileText,
+    title: "Training & Toolbox Talks",
+    desc: "Comprehensive safety training sessions and toolbox talks to keep your workforce informed and safety-conscious.",
+  },
+  {
+    icon: Search,
+    title: "Risk Assessments",
+    desc: "Thorough risk assessments to identify potential hazards and implement effective control measures across your operations.",
+  },
+  {
+    icon: AlertTriangle,
+    title: "Fire Fighting & First Aid",
+    desc: "Competent fire fighting and first aid representatives to ensure emergency preparedness and rapid response on site.",
+  },
 ];
-
 const ServicesSection = () => {
   const heading = useScrollAnimation("drop-down");
   const objective = useScrollAnimation("slide-up");
