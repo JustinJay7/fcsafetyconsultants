@@ -16,7 +16,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-secondary">
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <a href="#home" className="flex items-center gap-2">
-          <img src={helmetIcon} alt="Safety helmet" className="h-11 w-11 object-contain" />
+          <img src={helmetIcon} alt="Safety helmet" className="h-14 w-14 object-contain" />
           <div className="flex flex-col leading-tight">
             <span className="font-display text-lg font-extrabold text-primary md:text-xl">
               FC<span className="text-secondary-foreground"> Safety Consultants</span>

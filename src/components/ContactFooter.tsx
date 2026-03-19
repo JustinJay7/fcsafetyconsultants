@@ -19,7 +19,7 @@ const ContactFooter = () => {
             <h3 className="font-display font-bold text-lg">Contact Information</h3>
             <div className="flex items-center gap-3">
               <Phone size={18} />
-              <a href="tel:+27663790018" className="hover:text-primary transition-colors">066 379 0018</a>
+              <a href="https://wa.me/27663790018" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">066 379 0018</a>
             </div>
             <div className="flex items-center gap-3">
               <Phone size={18} />
