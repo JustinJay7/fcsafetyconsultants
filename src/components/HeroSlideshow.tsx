@@ -36,7 +36,7 @@ const HeroSlideshow = () => {
           <img
             src={slide.src}
             alt={slide.alt}
-            className="h-full w-full rounded-lg object-fill object-center"
+            className="h-full w-full rounded-lg object-fill md:object-contain object-center"
           />
           <div className="absolute inset-x-3 md:inset-x-6 inset-y-0 bg-secondary/25 rounded-lg" />
         </div>
