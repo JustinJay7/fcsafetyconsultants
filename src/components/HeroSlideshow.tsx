@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
-import hero3 from "@/assets/hero-3.jpg";
+import hero3 from "@/assets/hero-3-hd.jpg";
 import hero4 from "@/assets/hero-4.jpg";
 import hero5 from "@/assets/hero-5.jpg";
-import hero6 from "@/assets/hero-6.jpg";
+import hero6 from "@/assets/hero-6-hd.jpg";
 
 const slides = [
   { src: hero1, alt: "FC Safety team reviewing site plans" },
@@ -26,19 +26,19 @@ const HeroSlideshow = () => {
   }, []);
 
   return (
-    <section id="home" className="relative h-[65vh] md:h-[80vh] w-full overflow-hidden pt-16 bg-secondary">
+    <section id="home" className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden pt-16 bg-secondary">
       {slides.map((slide, i) => (
         <div
           key={i}
-          className="absolute inset-0 transition-opacity duration-1000 ease-in-out flex items-center justify-center px-3 md:px-6"
+          className="absolute inset-0 transition-opacity duration-1000 ease-in-out flex items-center justify-center px-4 md:px-8"
           style={{ opacity: i === current ? 1 : 0 }}
         >
           <img
             src={slide.src}
             alt={slide.alt}
-            className="h-full w-full rounded-lg object-fill md:object-contain object-center"
+            className="h-full w-full rounded-lg object-cover object-center"
           />
-          <div className="absolute inset-x-3 md:inset-x-6 inset-y-0 bg-secondary/25 rounded-lg" />
+          <div className="absolute inset-x-4 md:inset-x-8 inset-y-0 bg-secondary/30 rounded-lg" />
         </div>
       ))}
       <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
