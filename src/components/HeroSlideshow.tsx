@@ -26,7 +26,7 @@ const HeroSlideshow = () => {
   }, []);
 
   return (
-    <section id="home" className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden pt-16 bg-secondary">
+    <section id="home" className="relative h-[52vh] md:h-[62vh] lg:h-[66vh] w-full overflow-hidden pt-16 bg-secondary">
       {slides.map((slide, i) => (
         <div
           key={i}
