@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import hero3 from "@/assets/hero-3-hd.jpg";
@@ -17,6 +17,18 @@ const slides = [
 
 const HeroSlideshow = () => {
   const [current, setCurrent] = useState(0);
+  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set([0]));
+
+  // Preload all images on mount
+  useEffect(() => {
+    slides.forEach((slide, i) => {
+      const img = new Image();
+      img.onload = () => setLoadedImages((prev) => new Set(prev).add(i));
+      img.src = slide.src;
+    });
+  }, []);
+
+  const goTo = useCallback((index: number) => setCurrent(index), []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -26,35 +38,56 @@ const HeroSlideshow = () => {
   }, []);
 
   return (
-    <section id="home" className="relative h-[52vh] md:h-[62vh] lg:h-[66vh] w-full overflow-hidden pt-16 bg-secondary">
+    <section
+      id="home"
+      className="relative w-full overflow-hidden bg-secondary"
+      style={{ height: "clamp(320px, 56vh, 680px)", marginTop: "64px" }}
+    >
       {slides.map((slide, i) => (
         <div
           key={i}
-          className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
-          style={{ opacity: i === current ? 1 : 0 }}
+          className="absolute inset-0 will-change-[opacity]"
+          style={{
+            opacity: i === current ? 1 : 0,
+            transition: "opacity 800ms ease-in-out",
+            zIndex: i === current ? 1 : 0,
+          }}
         >
           <img
             src={slide.src}
             alt={slide.alt}
-            className="h-full w-full object-cover object-center"
+            loading={i === 0 ? "eager" : "lazy"}
+            decoding={i === 0 ? "sync" : "async"}
+            className="absolute inset-0 h-full w-full object-cover"
+            style={{ objectPosition: "center 30%" }}
           />
-          <div className="absolute inset-0 bg-secondary/30" />
+          <div className="absolute inset-0 bg-black/35" />
         </div>
       ))}
-      <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
-        <h1 className="font-display text-4xl font-extrabold text-primary md:text-6xl lg:text-7xl drop-shadow-lg mb-4">
+
+      {/* Content overlay */}
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 text-center">
+        <h1 className="font-display text-3xl font-extrabold text-primary sm:text-4xl md:text-6xl lg:text-7xl drop-shadow-lg mb-3"
+            style={{ lineHeight: "1.1", textShadow: "0 2px 12px rgba(0,0,0,0.4)" }}>
           FC Safety Consultants
         </h1>
-        <p className="font-display text-lg font-semibold text-secondary-foreground md:text-2xl max-w-2xl drop-shadow">
+        <p className="font-display text-base font-semibold text-white sm:text-lg md:text-2xl max-w-2xl"
+           style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}>
           Your Trusted Health &amp; Safety Consultant
         </p>
       </div>
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-2">
+
+      {/* Dots */}
+      <div className="absolute bottom-6 left-0 right-0 z-10 flex justify-center gap-2">
         {slides.map((_, i) => (
           <button
             key={i}
-            onClick={() => setCurrent(i)}
-            className={`h-3 w-3 rounded-full transition-all ${i === current ? "bg-primary scale-125" : "bg-secondary-foreground/50"}`}
+            onClick={() => goTo(i)}
+            className="h-3 w-3 rounded-full border border-white/40 transition-all duration-300"
+            style={{
+              backgroundColor: i === current ? "hsl(var(--primary))" : "rgba(255,255,255,0.45)",
+              transform: i === current ? "scale(1.3)" : "scale(1)",
+            }}
             aria-label={`Go to slide ${i + 1}`}
           />
         ))}
