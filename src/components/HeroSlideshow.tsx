@@ -41,7 +41,7 @@ const HeroSlideshow = () => {
     <section
       id="home"
       className="relative w-full overflow-hidden bg-secondary"
-      style={{ height: "clamp(320px, 56vh, 680px)", marginTop: "64px" }}
+      style={{ height: "clamp(320px, 60vh, 560px)", marginTop: "64px" }}
     >
       {slides.map((slide, i) => (
         <div
