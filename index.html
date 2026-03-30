@@ -30,16 +30,40 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "FC Safety Consultants Pty Ltd",
-      "description": "Fully registered Health and Safety officers available onsite.",
+      "url": "https://www.fcsafetyconsultants.co.za",
+      "description": "Fully registered Health and Safety officers available onsite. Onsite safety, auditing, compliance files, incident investigation in South Africa.",
       "telephone": ["+27663790018", "+27730623653"],
       "email": "info@fcsafetyconsultants.co.za",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "16 Holloway Road, Clarke Estate",
         "addressLocality": "Elsies River",
+        "addressRegion": "Western Cape",
         "addressCountry": "ZA"
-      }
+      },
+      "sameAs": [
+        "https://www.fcsafetyconsultants.co.za",
+        "https://fcsafetyconsultants.co.za"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "South Africa"
+      },
+      "priceRange": "$$"
     }
+    </script>
+
+    <!-- Redirect any non-www or alternate domain to the canonical www domain -->
+    <script>
+      (function() {
+        var canonical = "www.fcsafetyconsultants.co.za";
+        if (window.location.hostname !== "localhost" &&
+            window.location.hostname !== "127.0.0.1" &&
+            !window.location.hostname.endsWith(".lovable.app") &&
+            window.location.hostname !== canonical) {
+          window.location.replace("https://" + canonical + window.location.pathname + window.location.search);
+        }
+      })();
     </script>
   </head>
 
