@@ -37,19 +37,13 @@ const HeroSlideshow = () => {
   return (
     <section
       id="home"
-      className="w-full bg-secondary"
-      style={{ marginTop: "64px", padding: "clamp(12px, 2.5vw, 32px)" }}
+      className="relative w-full overflow-hidden"
+      style={{
+        marginTop: "95px",
+        height: "90vh",
+        minHeight: "600px",
+      }}
     >
-      <div
-        className="relative mx-auto w-full overflow-hidden rounded-xl shadow-2xl"
-        style={{
-          height: "clamp(260px, 52vh, 480px)",
-          maxWidth: "1400px",
-          border: "3px solid hsl(24 95% 53% / 0.6)",
-          boxShadow:
-            "0 0 0 6px hsl(222 47% 11%), 0 20px 60px -15px rgba(0,0,0,0.5)",
-        }}
-      >
         {slides.map((slide, i) => (
           <div
             key={i}
