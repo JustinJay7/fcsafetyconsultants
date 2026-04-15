@@ -60,6 +60,7 @@
         if (window.location.hostname !== "localhost" &&
             window.location.hostname !== "127.0.0.1" &&
             !window.location.hostname.endsWith(".lovable.app") &&
+            !window.location.hostname.endsWith(".lovableproject.com") &&
             window.location.hostname !== canonical) {
           window.location.replace("https://" + canonical + window.location.pathname + window.location.search);
         }
