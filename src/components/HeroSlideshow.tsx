@@ -57,8 +57,8 @@ const HeroSlideshow = () => {
             decoding={i === 0 ? "sync" : "async"}
             className="absolute inset-0 h-full w-full bg-black"
             style={{
-              objectFit: i === 2 ? "contain" : "cover",
-              objectPosition: i === 2 ? "center center" : "center 30%",
+              objectFit: "cover",
+              objectPosition: "center 30%",
             }}
           />
           <div className="absolute inset-0 bg-black/20" />
