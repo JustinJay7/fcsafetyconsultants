@@ -38,7 +38,7 @@ const HeroSlideshow = () => {
     <section
       id="home"
       className="relative w-full overflow-hidden"
-      style={{ marginTop: "95px", height: "70vh", minHeight: "400px", maxHeight: "550px" }}
+      style={{ marginTop: "95px", height: "75vh", minHeight: "450px", maxHeight: "620px" }}
     >
       {slides.map((slide, i) => (
         <div
@@ -55,7 +55,7 @@ const HeroSlideshow = () => {
             alt={slide.alt}
             loading={i === 0 ? "eager" : "lazy"}
             decoding={i === 0 ? "sync" : "async"}
-            className="absolute inset-0 h-full w-full object-contain bg-black"
+            className="absolute inset-0 h-full w-full object-cover object-[center_30%] bg-black"
           />
           <div className="absolute inset-0 bg-black/20" />
         </div>
