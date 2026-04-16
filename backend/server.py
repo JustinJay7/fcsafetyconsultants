@@ -1,22 +1,19 @@
 """
-FC Safety Consultants — Local Python Server
-=============================================
-Run this file to serve the built website locally.
+FC Safety Consultants — Local Python Server (optional)
+======================================================
+This file is ONLY needed if you want to self-host with Python/Flask.
+For Vercel deployment, use the standard `npm run build` output — no Python needed.
 
-Prerequisites:
+Local usage:
   1. pip install flask
-  2. In the Lovable project root, run: npm run build
-     (This creates a 'dist' folder with the production build)
-  3. Copy the 'dist' folder into the same directory as this file,
-     OR update DIST_DIR below to point to your build output.
-  4. Run: python server.py
-  5. Open http://localhost:5000 in your browser.
+  2. npm run build          (creates dist/)
+  3. python backend/server.py
+  4. Open http://localhost:5000
 """
 
 import os
 from flask import Flask, send_from_directory
 
-# Path to the Vite production build output
 DIST_DIR = os.path.join(os.path.dirname(__file__), "..", "dist")
 
 app = Flask(__name__, static_folder=DIST_DIR, static_url_path="")
