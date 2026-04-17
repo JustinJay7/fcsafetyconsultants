@@ -46,8 +46,8 @@ const ContactFooter = () => {
             </div>
           </div>
 
-          <div className="space-y-4 text-safety-blue-foreground">
-            <h3 className="font-display font-bold text-lg">Our Address</h3>
+          <div className="space-y-4 text-safety-blue-foreground [-webkit-text-stroke:0.4px_black]">
+            <h3 className="font-display font-bold text-lg text-black [-webkit-text-stroke:1px_black]">Our Address</h3>
             <a
               href="https://www.google.com/maps/search/?api=1&query=16+Holloway+Road%2C+Clarke+Estate%2C+Elsies+River%2C+South+Africa"
               target="_blank"
