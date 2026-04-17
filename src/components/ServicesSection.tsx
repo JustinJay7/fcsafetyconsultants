@@ -91,16 +91,16 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
   const Icon = service.icon;
   // Per-card border colors. Fire Fighting → red, one yellow swapped to purple.
   const borderColors = [
-    "border-yellow-400 hover:border-yellow-400 hover:shadow-[0_12px_30px_-5px_rgba(250,204,21,0.6)]",       // 0 Safety Reps
-    "border-safety-blue hover:border-safety-blue hover:shadow-[0_12px_30px_-5px_hsl(var(--safety-blue)/0.5)]", // 1 H&S Files
-    "border-accent hover:border-accent hover:shadow-[0_12px_30px_-5px_hsl(var(--accent)/0.5)]",             // 2 Site Auditing
-    "border-destructive hover:border-destructive hover:shadow-[0_12px_30px_-5px_hsl(var(--destructive)/0.5)]", // 3 Incident
-    "border-purple-500 hover:border-purple-500 hover:shadow-[0_12px_30px_-5px_rgba(168,85,247,0.6)]",       // 4 Dept Labour (was yellow)
-    "border-foreground hover:border-foreground hover:shadow-[0_12px_30px_-5px_hsl(var(--foreground)/0.4)]", // 5 Safety Docs
-    "border-safety-blue hover:border-safety-blue hover:shadow-[0_12px_30px_-5px_hsl(var(--safety-blue)/0.5)]", // 6 OHS
-    "border-accent hover:border-accent hover:shadow-[0_12px_30px_-5px_hsl(var(--accent)/0.5)]",             // 7 Training
-    "border-yellow-400 hover:border-yellow-400 hover:shadow-[0_12px_30px_-5px_rgba(250,204,21,0.6)]",       // 8 Risk
-    "border-destructive hover:border-destructive hover:shadow-[0_12px_30px_-5px_hsl(var(--destructive)/0.5)]", // 9 Fire Fighting → red
+    "border-yellow-400 hover:border-yellow-400 hover:shadow-[0_0_35px_5px_rgba(250,204,21,0.85)]",                 // 0 Safety Reps
+    "border-safety-blue hover:border-safety-blue hover:shadow-[0_0_35px_5px_hsl(var(--safety-blue)/0.85)]",        // 1 H&S Files
+    "border-accent hover:border-accent hover:shadow-[0_0_35px_5px_hsl(var(--accent)/0.85)]",                       // 2 Site Auditing
+    "border-destructive hover:border-destructive hover:shadow-[0_0_35px_5px_hsl(var(--destructive)/0.85)]",        // 3 Incident
+    "border-purple-500 hover:border-purple-500 hover:shadow-[0_0_35px_5px_rgba(168,85,247,0.85)]",                 // 4 Dept Labour
+    "border-foreground hover:border-foreground hover:shadow-[0_0_35px_5px_hsl(var(--foreground)/0.7)]",            // 5 Safety Docs
+    "border-safety-blue hover:border-safety-blue hover:shadow-[0_0_35px_5px_hsl(var(--safety-blue)/0.85)]",        // 6 OHS
+    "border-accent hover:border-accent hover:shadow-[0_0_35px_5px_hsl(var(--accent)/0.85)]",                       // 7 Training
+    "border-yellow-400 hover:border-yellow-400 hover:shadow-[0_0_35px_5px_rgba(250,204,21,0.85)]",                 // 8 Risk
+    "border-destructive hover:border-destructive hover:shadow-[0_0_35px_5px_hsl(var(--destructive)/0.85)]",        // 9 Fire Fighting
   ];
   // Border appears once card scrolls into view
   const isVisible = !scroll.className.includes("opacity-0");
