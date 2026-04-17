@@ -9,7 +9,7 @@ const ContactFooter = () => {
       <div className="container mx-auto max-w-4xl text-center">
         <h2
           ref={heading.ref}
-          className={`font-display text-3xl font-extrabold text-safety-blue-foreground md:text-4xl mb-10 ${heading.className}`}
+          className={`font-display text-3xl font-extrabold text-black md:text-4xl mb-10 [-webkit-text-stroke:1px_black] ${heading.className}`}
         >
           Get In Touch
         </h2>
