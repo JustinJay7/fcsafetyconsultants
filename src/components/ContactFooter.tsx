@@ -1,5 +1,5 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 
 const ContactFooter = () => {
   const heading = useScrollAnimation("drop-down");
@@ -9,7 +9,7 @@ const ContactFooter = () => {
       <div className="container mx-auto max-w-4xl text-center">
         <h2
           ref={heading.ref}
-          className={`font-display text-3xl font-extrabold text-black md:text-4xl mb-10 [-webkit-text-stroke:1px_white] ${heading.className}`}
+          className={`font-display text-3xl font-extrabold text-black md:text-4xl mb-10 [-webkit-text-stroke:1px_white] [paint-order:stroke_fill] ${heading.className}`}
         >
           Get In Touch
         </h2>
@@ -54,7 +54,7 @@ const ContactFooter = () => {
               rel="noopener noreferrer"
               className="flex items-start gap-3 hover:text-primary transition-colors"
             >
-              <MapPin size={18} className="mt-1 flex-shrink-0 text-red-600 fill-red-600" />
+              <span className="mt-0.5 flex-shrink-0 text-lg leading-none" aria-hidden="true">📍</span>
               <p>16 Holloway Road, Clarke Estate, Elsies River, South Africa</p>
             </a>
           </div>
