@@ -15,8 +15,8 @@ const ContactFooter = () => {
         </h2>
 
         <div className="grid gap-8 md:grid-cols-2 text-left mb-12">
-          <div className="space-y-4 text-safety-blue-foreground">
-            <h3 className="font-display font-bold text-lg">Contact Information</h3>
+          <div className="space-y-4 text-safety-blue-foreground [-webkit-text-stroke:0.4px_black]">
+            <h3 className="font-display font-bold text-lg text-black [-webkit-text-stroke:1px_black]">Contact Information</h3>
             <div className="flex items-center gap-3">
               <Phone size={18} />
               <a href="https://wa.me/27663790018" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">066 379 0018</a>
