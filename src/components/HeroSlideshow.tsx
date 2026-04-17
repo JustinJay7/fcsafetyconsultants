@@ -6,7 +6,6 @@ import hero4 from "@/assets/hero-4-hd.jpg";
 import hero5 from "@/assets/hero-5-hd.jpg";
 import hero6 from "@/assets/hero-6-hd.jpg";
 import hero7 from "@/assets/hero-7-hd.jpg";
-import hero8 from "@/assets/hero-8-hd.jpg";
 
 const slides = [
   { src: hero1, alt: "FC Safety team reviewing site plans" },
@@ -16,7 +15,6 @@ const slides = [
   { src: hero5, alt: "Safety officer reviewing documentation" },
   { src: hero6, alt: "Construction site safety overview" },
   { src: hero7, alt: "Safety Officer inspecting ductwork installation on site" },
-  { src: hero8, alt: "FC Safety Consultants team on site in branded PPE" },
 ];
 
 const HeroSlideshow = () => {

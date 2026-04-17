@@ -91,7 +91,7 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
   const Icon = service.icon;
   // Cycle through different border colors per card
   const borderColors = [
-    "border-primary hover:border-primary hover:shadow-[0_10px_25px_-5px_hsl(var(--primary)/0.4)]",
+    "border-yellow-400 hover:border-yellow-400 hover:shadow-[0_10px_25px_-5px_rgba(250,204,21,0.5)]",
     "border-safety-blue hover:border-safety-blue hover:shadow-[0_10px_25px_-5px_hsl(var(--safety-blue)/0.4)]",
     "border-accent hover:border-accent hover:shadow-[0_10px_25px_-5px_hsl(var(--accent)/0.4)]",
     "border-destructive hover:border-destructive hover:shadow-[0_10px_25px_-5px_hsl(var(--destructive)/0.4)]",

@@ -9,14 +9,14 @@ const ContactFooter = () => {
       <div className="container mx-auto max-w-4xl text-center">
         <h2
           ref={heading.ref}
-          className={`font-display text-3xl font-extrabold text-black md:text-4xl mb-10 [-webkit-text-stroke:1px_black] ${heading.className}`}
+          className={`font-display text-3xl font-extrabold text-black md:text-4xl mb-10 [-webkit-text-stroke:1px_white] ${heading.className}`}
         >
           Get In Touch
         </h2>
 
         <div className="grid gap-8 md:grid-cols-2 text-left mb-12">
-          <div className="space-y-4 text-safety-blue-foreground [-webkit-text-stroke:0.4px_black]">
-            <h3 className="font-display font-bold text-lg text-black [-webkit-text-stroke:1px_black]">Contact Information</h3>
+          <div className="space-y-4 text-safety-blue-foreground">
+            <h3 className="font-display font-bold text-lg text-safety-blue-foreground">Contact Information</h3>
             <div className="flex items-center gap-3">
               <Phone size={18} />
               <a href="https://wa.me/27663790018" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">066 379 0018</a>
@@ -46,15 +46,15 @@ const ContactFooter = () => {
             </div>
           </div>
 
-          <div className="space-y-4 text-safety-blue-foreground [-webkit-text-stroke:0.4px_black]">
-            <h3 className="font-display font-bold text-lg text-black [-webkit-text-stroke:1px_black]">Our Address</h3>
+          <div className="space-y-4 text-safety-blue-foreground">
+            <h3 className="font-display font-bold text-lg text-safety-blue-foreground">Our Address</h3>
             <a
               href="https://www.google.com/maps/search/?api=1&query=16+Holloway+Road%2C+Clarke+Estate%2C+Elsies+River%2C+South+Africa"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-start gap-3 hover:text-primary transition-colors"
             >
-              <MapPin size={18} className="mt-1 flex-shrink-0" />
+              <MapPin size={18} className="mt-1 flex-shrink-0 text-red-600 fill-red-600" />
               <p>16 Holloway Road, Clarke Estate, Elsies River, South Africa</p>
             </a>
           </div>
