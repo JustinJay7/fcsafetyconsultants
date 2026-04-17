@@ -97,8 +97,8 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
     "border-destructive hover:border-destructive hover:shadow-[0_10px_25px_-5px_hsl(var(--destructive)/0.4)]",
     "border-foreground hover:border-foreground hover:shadow-[0_10px_25px_-5px_hsl(var(--foreground)/0.3)]",
   ];
-  // Border appears once card scrolls into view (visible state from useScrollAnimation)
-  const isVisible = scroll.className.includes("opacity-100") || scroll.className.includes("translate");
+  // Border appears once card scrolls into view
+  const isVisible = !scroll.className.includes("opacity-0");
   const colorClass = borderColors[index % borderColors.length];
   return (
     <div
