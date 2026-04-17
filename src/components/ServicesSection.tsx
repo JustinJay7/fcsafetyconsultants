@@ -89,10 +89,21 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
   const animations = ["slide-left", "slide-up", "slide-right"] as const;
   const scroll = useScrollAnimation(animations[index % 3]);
   const Icon = service.icon;
+  // Cycle through different border colors per card
+  const borderColors = [
+    "border-primary hover:border-primary hover:shadow-[0_10px_25px_-5px_hsl(var(--primary)/0.4)]",
+    "border-safety-blue hover:border-safety-blue hover:shadow-[0_10px_25px_-5px_hsl(var(--safety-blue)/0.4)]",
+    "border-accent hover:border-accent hover:shadow-[0_10px_25px_-5px_hsl(var(--accent)/0.4)]",
+    "border-destructive hover:border-destructive hover:shadow-[0_10px_25px_-5px_hsl(var(--destructive)/0.4)]",
+    "border-foreground hover:border-foreground hover:shadow-[0_10px_25px_-5px_hsl(var(--foreground)/0.3)]",
+  ];
+  // Border appears once card scrolls into view (visible state from useScrollAnimation)
+  const isVisible = scroll.className.includes("opacity-100") || scroll.className.includes("translate");
+  const colorClass = borderColors[index % borderColors.length];
   return (
     <div
       ref={scroll.ref}
-      className={`rounded-lg bg-section-bg p-8 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ${scroll.className}`}
+      className={`rounded-lg bg-section-bg p-8 text-center border-2 ${isVisible ? colorClass : "border-transparent"} hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transition-all duration-300 ${scroll.className}`}
     >
       <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
         <Icon className="text-primary" size={32} />
