@@ -1,20 +1,22 @@
 import { useState, useEffect, useCallback } from "react";
 import hero1 from "@/assets/hero-1-hd.jpg";
 import hero2 from "@/assets/hero-2-hd.jpg";
-import hero3Replacement from "@/assets/hero-3-replacement-hd.jpg";
 import hero4 from "@/assets/hero-4-hd.jpg";
 import hero5 from "@/assets/hero-5-hd.jpg";
 import hero6 from "@/assets/hero-6-hd.jpg";
-import hero7 from "@/assets/hero-7-hd.jpg";
+import heroNewA from "@/assets/hero-new-a-hd.jpg";
+import heroNewB from "@/assets/hero-new-b-hd.jpg";
+import heroNewC from "@/assets/hero-new-c-hd.jpg";
 
 const slides = [
   { src: hero1, alt: "FC Safety team reviewing site plans" },
   { src: hero2, alt: "FC Safety Consultants team on construction site" },
-  { src: hero3Replacement, alt: "FC Safety Rep inspecting building site in Cape Town" },
   { src: hero4, alt: "Construction site scaffolding inspection" },
   { src: hero5, alt: "Safety officer reviewing documentation" },
   { src: hero6, alt: "Construction site safety overview" },
-  { src: hero7, alt: "Safety Officer inspecting ductwork installation on site" },
+  { src: heroNewA, alt: "Safety officer inspecting high-rise construction site in Cape Town" },
+  { src: heroNewB, alt: "Safety officer inspecting ductwork installation on site" },
+  { src: heroNewC, alt: "Safety representative inspecting building exterior on city street" },
 ];
 
 const HeroSlideshow = () => {
