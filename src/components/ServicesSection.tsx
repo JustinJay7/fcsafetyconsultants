@@ -89,26 +89,27 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
   const animations = ["slide-left", "slide-up", "slide-right"] as const;
   const scroll = useScrollAnimation(animations[index % 3]);
   const Icon = service.icon;
-  // Per-card border colors. Fire Fighting → red, one yellow swapped to purple.
-  const borderColors = [
-    "border-yellow-400 hover:border-yellow-400 hover:shadow-[0_0_35px_5px_rgba(250,204,21,0.85)]",                 // 0 Safety Reps
-    "border-safety-blue hover:border-safety-blue hover:shadow-[0_0_35px_5px_hsl(var(--safety-blue)/0.85)]",        // 1 H&S Files
-    "border-accent hover:border-accent hover:shadow-[0_0_35px_5px_hsl(var(--accent)/0.85)]",                       // 2 Site Auditing
-    "border-destructive hover:border-destructive hover:shadow-[0_0_35px_5px_hsl(var(--destructive)/0.85)]",        // 3 Incident
-    "border-purple-500 hover:border-purple-500 hover:shadow-[0_0_35px_5px_rgba(168,85,247,0.85)]",                 // 4 Dept Labour
-    "border-foreground hover:border-foreground hover:shadow-[0_0_35px_5px_hsl(var(--foreground)/0.7)]",            // 5 Safety Docs
-    "border-safety-blue hover:border-safety-blue hover:shadow-[0_0_35px_5px_hsl(var(--safety-blue)/0.85)]",        // 6 OHS
-    "border-accent hover:border-accent hover:shadow-[0_0_35px_5px_hsl(var(--accent)/0.85)]",                       // 7 Training
-    "border-yellow-400 hover:border-yellow-400 hover:shadow-[0_0_35px_5px_rgba(250,204,21,0.85)]",                 // 8 Risk
-    "border-destructive hover:border-destructive hover:shadow-[0_0_35px_5px_hsl(var(--destructive)/0.85)]",        // 9 Fire Fighting
+  // Per-card border colors + glow color (RGBA for the pulsing keyframe).
+  const cardStyles = [
+    { border: "border-yellow-400 hover:border-yellow-400", glow: "rgba(250, 204, 21, 0.9)" },        // 0 Safety Reps
+    { border: "border-safety-blue hover:border-safety-blue", glow: "rgba(20, 130, 184, 0.9)" },      // 1 H&S Files
+    { border: "border-accent hover:border-accent", glow: "rgba(180, 200, 220, 0.9)" },               // 2 Site Auditing
+    { border: "border-destructive hover:border-destructive", glow: "rgba(239, 68, 68, 0.9)" },       // 3 Incident
+    { border: "border-purple-500 hover:border-purple-500", glow: "rgba(168, 85, 247, 0.9)" },        // 4 Dept Labour
+    { border: "border-foreground hover:border-foreground", glow: "rgba(15, 23, 42, 0.85)" },         // 5 Safety Docs
+    { border: "border-safety-blue hover:border-safety-blue", glow: "rgba(20, 130, 184, 0.9)" },      // 6 OHS
+    { border: "border-accent hover:border-accent", glow: "rgba(180, 200, 220, 0.9)" },               // 7 Training
+    { border: "border-yellow-400 hover:border-yellow-400", glow: "rgba(250, 204, 21, 0.9)" },        // 8 Risk
+    { border: "border-destructive hover:border-destructive", glow: "rgba(239, 68, 68, 0.9)" },       // 9 Fire Fighting
   ];
   // Border appears once card scrolls into view
   const isVisible = !scroll.className.includes("opacity-0");
-  const colorClass = borderColors[index % borderColors.length];
+  const style = cardStyles[index % cardStyles.length];
   return (
     <div
       ref={scroll.ref}
-      className={`rounded-lg bg-section-bg p-8 text-center border-2 hover:border-4 ${isVisible ? colorClass : "border-transparent"} hover:shadow-xl hover:-translate-y-2 hover:scale-[1.03] transition-all duration-300 ${scroll.className}`}
+      style={{ ["--glow-color" as any]: style.glow }}
+      className={`group rounded-lg bg-section-bg p-8 text-center border-2 hover:border-4 ${isVisible ? style.border : "border-transparent"} hover:-translate-y-2 hover:scale-[1.03] hover:animate-pulse-glow transition-all duration-300 ${scroll.className}`}
     >
       <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
         <Icon className="text-primary" size={32} />

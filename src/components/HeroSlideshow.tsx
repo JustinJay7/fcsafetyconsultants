@@ -41,8 +41,15 @@ const HeroSlideshow = () => {
   return (
     <section
       id="home"
-      className="relative w-full overflow-hidden"
-      style={{ marginTop: "95px", height: "75vh", minHeight: "450px", maxHeight: "620px" }}
+      className="relative overflow-hidden bg-black"
+      style={{
+        marginTop: "95px",
+        height: "75vh",
+        minHeight: "450px",
+        maxHeight: "620px",
+        marginLeft: "1cm",
+        marginRight: "1cm",
+      }}
     >
       {slides.map((slide, i) => (
         <div
@@ -61,7 +68,7 @@ const HeroSlideshow = () => {
             decoding={i === 0 ? "sync" : "async"}
             className="absolute inset-0 h-full w-full bg-black"
             style={{
-              objectFit: "cover",
+              objectFit: i >= 5 ? "contain" : "cover",
               objectPosition: "center 30%",
             }}
           />

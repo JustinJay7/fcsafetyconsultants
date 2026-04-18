@@ -81,10 +81,15 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "pulse-glow": {
+          "0%, 100%": { boxShadow: "0 0 20px 2px var(--glow-color, rgba(255,255,255,0.4))" },
+          "50%": { boxShadow: "0 0 45px 10px var(--glow-color, rgba(255,255,255,0.85))" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "pulse-glow": "pulse-glow 1.6s ease-in-out infinite",
       },
     },
   },

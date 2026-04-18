@@ -3,10 +3,10 @@ import { Menu, X } from "lucide-react";
 import helmetIcon from "@/assets/helmet-icon.png";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "#home", hoverClass: "hover:text-yellow-400" },
+  { label: "About", href: "#about", hoverClass: "hover:text-safety-blue" },
+  { label: "Services", href: "#services", hoverClass: "hover:text-purple-400" },
+  { label: "Contact", href: "#contact", hoverClass: "hover:text-destructive" },
 ];
 
 const Navbar = () => {
@@ -41,7 +41,7 @@ const Navbar = () => {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="block px-6 py-3 text-secondary-foreground hover:text-primary hover:bg-secondary/80 font-display font-semibold transition-colors"
+              className={`block px-6 py-3 text-secondary-foreground ${link.hoverClass} hover:bg-secondary/80 font-display font-semibold transition-colors`}
             >
               {link.label}
             </a>
