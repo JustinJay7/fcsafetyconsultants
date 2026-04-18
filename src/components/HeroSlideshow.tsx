@@ -4,8 +4,6 @@ import hero2 from "@/assets/hero-2-hd.jpg";
 import hero4 from "@/assets/hero-4-hd.jpg";
 import hero5 from "@/assets/hero-5-hd.jpg";
 import hero6 from "@/assets/hero-6-hd.jpg";
-import heroNewA from "@/assets/hero-new-a-hd.jpg";
-import heroNewB from "@/assets/hero-new-b-hd.jpg";
 import heroNewC from "@/assets/hero-new-c-hd.jpg";
 
 const slides = [
@@ -14,8 +12,6 @@ const slides = [
   { src: hero4, alt: "Construction site scaffolding inspection" },
   { src: hero5, alt: "Safety officer reviewing documentation" },
   { src: hero6, alt: "Construction site safety overview" },
-  { src: heroNewA, alt: "Safety officer inspecting high-rise construction site in Cape Town" },
-  { src: heroNewB, alt: "Safety officer inspecting ductwork installation on site" },
   { src: heroNewC, alt: "Safety representative inspecting building exterior on city street" },
 ];
 
@@ -47,8 +43,6 @@ const HeroSlideshow = () => {
         height: "75vh",
         minHeight: "450px",
         maxHeight: "620px",
-        marginLeft: "1cm",
-        marginRight: "1cm",
       }}
     >
       {slides.map((slide, i) => (
@@ -66,11 +60,8 @@ const HeroSlideshow = () => {
             alt={slide.alt}
             loading={i === 0 ? "eager" : "lazy"}
             decoding={i === 0 ? "sync" : "async"}
-            className="absolute inset-0 h-full w-full bg-black"
-            style={{
-              objectFit: i >= 5 ? "contain" : "cover",
-              objectPosition: "center 30%",
-            }}
+            className="absolute inset-0 h-full w-full object-cover"
+            style={{ objectPosition: "center 30%" }}
           />
           <div className="absolute inset-0 bg-black/20" />
         </div>

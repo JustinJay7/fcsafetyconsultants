@@ -102,14 +102,14 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
     { border: "border-yellow-400 hover:border-yellow-400", glow: "rgba(250, 204, 21, 0.9)" },        // 8 Risk
     { border: "border-destructive hover:border-destructive", glow: "rgba(239, 68, 68, 0.9)" },       // 9 Fire Fighting
   ];
-  // Border appears once card scrolls into view
-  const isVisible = !scroll.className.includes("opacity-0");
   const style = cardStyles[index % cardStyles.length];
+  // Keep card always visible (no opacity-0); only run the entrance animation when in view.
+  const animationClass = scroll.className.includes("opacity-0") ? "" : scroll.className;
   return (
     <div
       ref={scroll.ref}
       style={{ ["--glow-color" as any]: style.glow }}
-      className={`group rounded-lg bg-section-bg p-8 text-center border-2 hover:border-4 ${isVisible ? style.border : "border-transparent"} hover:-translate-y-2 hover:scale-[1.03] hover:animate-pulse-glow transition-all duration-300 ${scroll.className}`}
+      className={`group rounded-lg bg-section-bg p-8 text-center border-2 ${style.border} hover:-translate-y-2 hover:scale-[1.03] hover:shadow-[0_0_30px_4px_var(--glow-color)] transition-all duration-300 ${animationClass}`}
     >
       <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
         <Icon className="text-primary" size={32} />
