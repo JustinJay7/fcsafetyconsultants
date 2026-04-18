@@ -62,7 +62,7 @@ const ContactFooter = () => {
 
         <div className="border-t border-black/10 pt-6">
           <p className="text-black text-xs">
-            © {new Date().getFullYear()} FC Safety Consultants Pty Ltd — All Rights Reserved
+            FC Safety Consultants Pty Ltd — All Rights Reserved © {new Date().getFullYear()}
           </p>
         </div>
       </div>
