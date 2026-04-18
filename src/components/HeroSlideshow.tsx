@@ -4,15 +4,19 @@ import hero2 from "@/assets/hero-2-hd.jpg";
 import hero4 from "@/assets/hero-4-hd.jpg";
 import hero5 from "@/assets/hero-5-hd.jpg";
 import hero6 from "@/assets/hero-6-hd.jpg";
+import heroNewA from "@/assets/hero-new-a-hd.jpg";
+import heroNewB from "@/assets/hero-new-b-hd.jpg";
 import heroNewC from "@/assets/hero-new-c-hd.jpg";
 
 const slides = [
-  { src: hero1, alt: "FC Safety team reviewing site plans" },
-  { src: hero2, alt: "FC Safety Consultants team on construction site" },
-  { src: hero4, alt: "Construction site scaffolding inspection" },
-  { src: hero5, alt: "Safety officer reviewing documentation" },
-  { src: hero6, alt: "Construction site safety overview" },
-  { src: heroNewC, alt: "Safety representative inspecting building exterior on city street" },
+  { src: hero1, alt: "FC Safety team reviewing site plans", fit: "cover" as const },
+  { src: hero2, alt: "FC Safety Consultants team on construction site", fit: "cover" as const },
+  { src: hero4, alt: "Construction site scaffolding inspection", fit: "cover" as const },
+  { src: hero5, alt: "Safety officer reviewing documentation", fit: "cover" as const },
+  { src: hero6, alt: "Construction site safety overview", fit: "cover" as const },
+  { src: heroNewA, alt: "FC Safety team site walk-through", fit: "contain" as const },
+  { src: heroNewB, alt: "Safety inspection at project site", fit: "contain" as const },
+  { src: heroNewC, alt: "Safety representative inspecting building exterior", fit: "contain" as const },
 ];
 
 const HeroSlideshow = () => {
@@ -60,8 +64,8 @@ const HeroSlideshow = () => {
             alt={slide.alt}
             loading={i === 0 ? "eager" : "lazy"}
             decoding={i === 0 ? "sync" : "async"}
-            className="absolute inset-0 h-full w-full object-cover"
-            style={{ objectPosition: "center 30%" }}
+            className="absolute inset-0 h-full w-full"
+            style={{ objectFit: slide.fit, objectPosition: "center 30%" }}
           />
           <div className="absolute inset-0 bg-black/20" />
         </div>
