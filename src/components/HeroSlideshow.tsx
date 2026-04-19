@@ -63,7 +63,7 @@ const HeroSlideshow = () => {
             loading={i === 0 ? "eager" : "lazy"}
             decoding={i === 0 ? "sync" : "async"}
             className="absolute inset-0 h-full w-full"
-            style={{ objectFit: "contain", objectPosition: "center" }}
+            style={{ objectFit: "cover", objectPosition: "center 30%" }}
           />
           <div className="absolute inset-0 bg-black/20" />
         </div>

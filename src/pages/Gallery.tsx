@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useEmblaCarousel from "embla-carousel-react";
-import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, X } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import ContactFooter from "@/components/ContactFooter";
 import WhatsAppFAB from "@/components/WhatsAppFAB";
@@ -17,6 +17,7 @@ import hero8 from "@/assets/hero-8-hd.jpg";
 import heroNewA from "@/assets/hero-new-a-hd.jpg";
 import heroNewB from "@/assets/hero-new-b-hd.jpg";
 import heroNewC from "@/assets/hero-new-c-hd.jpg";
+import galleryCrane from "@/assets/gallery-crane-hd.jpg";
 
 const photos = [
   { src: hero1, alt: "FC Safety team reviewing site plans" },
@@ -30,15 +31,28 @@ const photos = [
   { src: heroNewA, alt: "Safety officer inspecting high-rise construction site in Cape Town" },
   { src: heroNewB, alt: "Safety officer inspecting ductwork installation on site" },
   { src: heroNewC, alt: "Safety representative inspecting building exterior on city street" },
+  { src: galleryCrane, alt: "Tower crane operating on construction site" },
 ];
 
 const Gallery = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center" });
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
   const scrollTo = useCallback((i: number) => emblaApi?.scrollTo(i), [emblaApi]);
+
+  const openLightbox = useCallback((i: number) => setLightboxIndex(i), []);
+  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
+  const lightboxPrev = useCallback(
+    () => setLightboxIndex((i) => (i === null ? null : (i - 1 + photos.length) % photos.length)),
+    []
+  );
+  const lightboxNext = useCallback(
+    () => setLightboxIndex((i) => (i === null ? null : (i + 1) % photos.length)),
+    []
+  );
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -50,6 +64,21 @@ const Gallery = () => {
       emblaApi.off("select", onSelect);
     };
   }, [emblaApi]);
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") lightboxPrev();
+      if (e.key === "ArrowRight") lightboxNext();
+    };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [lightboxIndex, closeLightbox, lightboxPrev, lightboxNext]);
 
   return (
     <>
@@ -70,12 +99,11 @@ const Gallery = () => {
               Gallery
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              A glimpse of FC Safety Consultants on site — keeping South African workplaces safe and compliant.
+              A glimpse of FC Safety Consultants on site — keeping South African workplaces safe and compliant. Click any image to enlarge.
             </p>
           </header>
 
           <div className="relative">
-            {/* Carousel viewport */}
             <div className="overflow-hidden rounded-lg" ref={emblaRef}>
               <div className="flex">
                 {photos.map((p, i) => {
@@ -84,16 +112,19 @@ const Gallery = () => {
                     <div
                       key={i}
                       className="relative shrink-0 grow-0 px-2"
-                      // basis ~80% so neighbour slides peek through on the sides
                       style={{ flexBasis: "80%" }}
                     >
-                      <div
-                        className="relative aspect-[16/9] overflow-hidden rounded-lg bg-black transition-all duration-500"
+                      <button
+                        type="button"
+                        onClick={() => isActive && openLightbox(i)}
+                        className="relative aspect-[16/9] block w-full overflow-hidden rounded-lg bg-black transition-all duration-500 cursor-pointer"
                         style={{
                           filter: isActive ? "blur(0px)" : "blur(6px)",
                           opacity: isActive ? 1 : 0.55,
                           transform: isActive ? "scale(1)" : "scale(0.95)",
                         }}
+                        aria-label={isActive ? `Enlarge image: ${p.alt}` : p.alt}
+                        tabIndex={isActive ? 0 : -1}
                       >
                         <img
                           src={p.src}
@@ -101,14 +132,13 @@ const Gallery = () => {
                           loading={i === 0 ? "eager" : "lazy"}
                           className="h-full w-full object-cover"
                         />
-                      </div>
+                      </button>
                     </div>
                   );
                 })}
               </div>
             </div>
 
-            {/* Prev / Next buttons */}
             <button
               type="button"
               onClick={scrollPrev}
@@ -127,7 +157,6 @@ const Gallery = () => {
             </button>
           </div>
 
-          {/* Dots */}
           <div className="mt-6 flex justify-center gap-2 flex-wrap">
             {photos.map((_, i) => (
               <button
@@ -143,12 +172,63 @@ const Gallery = () => {
             ))}
           </div>
 
-          {/* Caption */}
           <p className="mt-6 text-center text-sm text-muted-foreground">
             {selectedIndex + 1} / {photos.length} — {photos[selectedIndex]?.alt}
           </p>
         </div>
       </main>
+
+      {/* Lightbox */}
+      {lightboxIndex !== null && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4"
+          onClick={closeLightbox}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image viewer"
+        >
+          <button
+            type="button"
+            onClick={closeLightbox}
+            aria-label="Close"
+            className="absolute top-4 right-4 z-10 rounded-full bg-white/10 hover:bg-white/20 text-white p-3 transition-colors"
+          >
+            <X size={24} />
+          </button>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              lightboxPrev();
+            }}
+            aria-label="Previous"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white/10 hover:bg-white/20 text-white p-3 transition-colors"
+          >
+            <ChevronLeft size={28} />
+          </button>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              lightboxNext();
+            }}
+            aria-label="Next"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 rounded-full bg-white/10 hover:bg-white/20 text-white p-3 transition-colors"
+          >
+            <ChevronRight size={28} />
+          </button>
+          <img
+            src={photos[lightboxIndex].src}
+            alt={photos[lightboxIndex].alt}
+            onClick={(e) => e.stopPropagation()}
+            className="max-h-[90vh] max-w-[95vw] object-contain rounded-lg shadow-2xl"
+          />
+          <p className="absolute bottom-4 left-0 right-0 text-center text-sm text-white/80 px-4">
+            {lightboxIndex + 1} / {photos.length} — {photos[lightboxIndex].alt}
+          </p>
+        </div>
+      )}
+
       <ContactFooter />
       <WhatsAppFAB />
     </>
