@@ -1,20 +1,18 @@
 import { useState, useEffect, useCallback } from "react";
 import hero1 from "@/assets/hero-1-hd.jpg";
 import hero2 from "@/assets/hero-2-hd.jpg";
+import hero3 from "@/assets/hero-3-replacement-hd.jpg";
 import hero4 from "@/assets/hero-4-hd.jpg";
 import hero5 from "@/assets/hero-5-hd.jpg";
 import hero6 from "@/assets/hero-6-hd.jpg";
-import hero7 from "@/assets/hero-7-hd.jpg";
-import hero8 from "@/assets/hero-8-hd.jpg";
 
 const slides = [
   { src: hero1, alt: "FC Safety team reviewing site plans" },
   { src: hero2, alt: "FC Safety Consultants team on construction site" },
+  { src: hero3, alt: "Construction site safety inspection" },
   { src: hero4, alt: "Construction site scaffolding inspection" },
   { src: hero5, alt: "Safety officer reviewing documentation" },
   { src: hero6, alt: "Construction site safety overview" },
-  { src: hero7, alt: "Safety equipment review" },
-  { src: hero8, alt: "On-site safety briefing" },
 ];
 
 const HeroSlideshow = () => {
