@@ -1,24 +1,23 @@
 [build]
-  command = "npm install && npm run build"
+  command = "npm install --legacy-peer-deps && npm run build"
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "22"
   NPM_FLAGS = "--legacy-peer-deps"
 
-# SPA fallback — every route serves index.html so React Router can handle it
+# SPA routing - every route serves index.html (critical)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# Long-cache static assets (hashed by Vite)
+# Cache headers for better performance
 [[headers]]
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Allow crawlers to fetch sitemap & robots
 [[headers]]
   for = "/sitemap.xml"
   [headers.values]
