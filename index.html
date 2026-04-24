@@ -53,15 +53,20 @@
     }
     </script>
 
-    <!-- Redirect any non-www or alternate domain to the canonical www domain -->
+    <!-- Redirect alternate domains to canonical, but allow GitHub Pages and previews -->
     <script>
       (function() {
         var canonical = "www.fcsafetyconsultants.co.za";
-        if (window.location.hostname !== "localhost" &&
-            window.location.hostname !== "127.0.0.1" &&
-            !window.location.hostname.endsWith(".lovable.app") &&
-            !window.location.hostname.endsWith(".lovableproject.com") &&
-            window.location.hostname !== canonical) {
+        var host = window.location.hostname;
+        var allowed = (
+          host === "localhost" ||
+          host === "127.0.0.1" ||
+          host.endsWith(".lovable.app") ||
+          host.endsWith(".lovableproject.com") ||
+          host.endsWith(".github.io") ||
+          host === canonical
+        );
+        if (!allowed) {
           window.location.replace("https://" + canonical + window.location.pathname + window.location.search);
         }
       })();

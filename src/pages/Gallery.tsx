@@ -14,24 +14,20 @@ import hero5 from "@/assets/hero-5-hd.jpg";
 import hero6 from "@/assets/hero-6-hd.jpg";
 import hero7 from "@/assets/hero-7-hd.jpg";
 import hero8 from "@/assets/hero-8-hd.jpg";
-import heroNewA from "@/assets/hero-new-a-hd.jpg";
 import heroNewB from "@/assets/hero-new-b-hd.jpg";
-import heroNewC from "@/assets/hero-new-c-hd.jpg";
 import galleryCrane from "@/assets/gallery-crane-hd.jpg";
 
-// Deduplicated: each image appears exactly once
+// 10 unique images — trees-only photo and duplicate street scene removed
 const photos = [
   { src: hero1, alt: "FC Safety team reviewing site plans" },
   { src: hero2, alt: "FC Safety Consultants team on construction site" },
-  { src: hero3, alt: "Safety inspection on construction site" },
+  { src: hero3, alt: "Safety representative inspecting building exterior on city street" },
   { src: hero4, alt: "Construction site scaffolding inspection" },
   { src: hero5, alt: "Safety officer reviewing documentation" },
   { src: hero6, alt: "Construction site safety overview" },
   { src: hero7, alt: "Safety equipment review" },
   { src: hero8, alt: "On-site safety briefing" },
-  { src: heroNewA, alt: "Safety officer inspecting high-rise construction site in Cape Town" },
   { src: heroNewB, alt: "Safety officer inspecting ductwork installation on site" },
-  { src: heroNewC, alt: "Safety representative inspecting building exterior on city street" },
   { src: galleryCrane, alt: "Tower crane operating on construction site" },
 ];
 
