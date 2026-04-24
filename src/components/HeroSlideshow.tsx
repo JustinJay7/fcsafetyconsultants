@@ -37,13 +37,14 @@ const HeroSlideshow = () => {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-black"
+      className="relative overflow-hidden bg-black mx-auto lg:px-4"
       style={{
         marginTop: "95px",
-        height: "75vh",
-        minHeight: "450px",
-        maxHeight: "620px",
+        height: "70vh",
+        minHeight: "420px",
+        maxHeight: "600px",
         border: "none",
+        maxWidth: "1600px",
       }}
     >
       {slides.map((slide, i) => (
@@ -61,9 +62,8 @@ const HeroSlideshow = () => {
             alt={slide.alt}
             loading={i === 0 ? "eager" : "lazy"}
             decoding={i === 0 ? "sync" : "async"}
-            className="absolute inset-0 h-full w-full"
+            className="absolute inset-0 h-full w-full object-contain sm:object-cover"
             style={{
-              objectFit: i === 2 ? "contain" : "cover",
               objectPosition: "center 30%",
             }}
           />
