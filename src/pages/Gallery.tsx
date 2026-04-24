@@ -19,6 +19,7 @@ import heroNewB from "@/assets/hero-new-b-hd.jpg";
 import heroNewC from "@/assets/hero-new-c-hd.jpg";
 import galleryCrane from "@/assets/gallery-crane-hd.jpg";
 
+// Deduplicated: each image appears exactly once
 const photos = [
   { src: hero1, alt: "FC Safety team reviewing site plans" },
   { src: hero2, alt: "FC Safety Consultants team on construction site" },
