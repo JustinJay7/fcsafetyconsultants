@@ -30,6 +30,10 @@ jobs:
         run: npm ci --legacy-peer-deps
 
       - name: Build
+        env:
+          # For a user/org site (e.g. fcsafetyconsultants.github.io) leave VITE_BASE unset.
+          # For a project site (e.g. fcsafetyconsultants.github.io/<repo>) set VITE_BASE: "/<repo>/"
+          VITE_BASE: ${{ vars.VITE_BASE || '/' }}
         run: npm run build
 
       - name: SPA fallback (copy index.html to 404.html)
