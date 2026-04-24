@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import hero1 from "@/assets/hero-1-hd.jpg";
 import hero2 from "@/assets/hero-2-hd.jpg";
-import hero3 from "@/assets/hero-3-replacement-hd.jpg";
+import hero3 from "@/assets/hero-3-new-hd.jpg";
 import hero4 from "@/assets/hero-4-hd.jpg";
 import hero5 from "@/assets/hero-5-hd.jpg";
 import hero6 from "@/assets/hero-6-hd.jpg";
@@ -62,7 +62,10 @@ const HeroSlideshow = () => {
             loading={i === 0 ? "eager" : "lazy"}
             decoding={i === 0 ? "sync" : "async"}
             className="absolute inset-0 h-full w-full"
-            style={{ objectFit: "cover", objectPosition: "center 30%" }}
+            style={{
+              objectFit: i === 2 ? "contain" : "cover",
+              objectPosition: "center 30%",
+            }}
           />
           <div className="absolute inset-0 bg-black/20" />
         </div>
