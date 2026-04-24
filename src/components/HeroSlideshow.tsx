@@ -40,9 +40,10 @@ const HeroSlideshow = () => {
       className="relative overflow-hidden bg-black"
       style={{
         marginTop: "95px",
-        height: "75vh",
-        minHeight: "450px",
-        maxHeight: "620px",
+        height: "70vh",
+        minHeight: "420px",
+        maxHeight: "550px",
+        border: "none",
       }}
     >
       {slides.map((slide, i) => (
@@ -61,7 +62,7 @@ const HeroSlideshow = () => {
             loading={i === 0 ? "eager" : "lazy"}
             decoding={i === 0 ? "sync" : "async"}
             className="absolute inset-0 h-full w-full"
-            style={{ objectFit: "cover", objectPosition: "center 30%" }}
+            style={{ objectFit: "contain", objectPosition: "center" }}
           />
           <div className="absolute inset-0 bg-black/20" />
         </div>
