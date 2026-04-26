@@ -1,13 +1,17 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>FC Safety Consultants</title>
-    <script>
-      // SPA fallback for GitHub Pages — redirect to root preserving the path
-      sessionStorage.redirect = location.href;
-      location.replace('/');
-    </script>
-  </head>
-  <body></body>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>FC Safety Consultants</title>
+  <script>
+    // SPA redirect for GitHub Pages
+    var path = window.location.pathname;
+    var redirectPath = path;
+    sessionStorage.setItem('redirect', redirectPath);
+    window.location.replace('/');
+  </script>
+</head>
+<body>
+  Redirecting to FC Safety Consultants...
+</body>
 </html>
