@@ -12,12 +12,11 @@ import hero3 from "@/assets/hero-3-new-hd.jpg";
 import hero4 from "@/assets/hero-4-hd.jpg";
 import hero5 from "@/assets/hero-5-hd.jpg";
 import hero6 from "@/assets/hero-6-hd.jpg";
-import hero7 from "@/assets/hero-7-hd.jpg";
-import hero8 from "@/assets/hero-8-hd.jpg";
-import heroNewB from "@/assets/hero-new-b-hd.jpg";
 import galleryCrane from "@/assets/gallery-crane-hd.jpg";
+import galleryDuctwork from "@/assets/gallery-ductwork-hd.jpg";
+import galleryTeam from "@/assets/gallery-team-hd.jpg";
+import galleryPointing from "@/assets/gallery-pointing-hd.jpg";
 
-// 10 unique images — trees-only photo and duplicate street scene removed
 const photos = [
   { src: hero1, alt: "FC Safety team reviewing site plans" },
   { src: hero2, alt: "FC Safety Consultants team on construction site" },
@@ -25,10 +24,10 @@ const photos = [
   { src: hero4, alt: "Construction site scaffolding inspection" },
   { src: hero5, alt: "Safety officer reviewing documentation" },
   { src: hero6, alt: "Construction site safety overview" },
-  { src: hero7, alt: "Safety equipment review" },
-  { src: hero8, alt: "On-site safety briefing" },
-  { src: heroNewB, alt: "Safety officer inspecting ductwork installation on site" },
   { src: galleryCrane, alt: "Tower crane operating on construction site" },
+  { src: galleryDuctwork, alt: "FC Safety officer inspecting ductwork installation on site" },
+  { src: galleryTeam, alt: "FC Safety Consultants team on site in branded PPE" },
+  { src: galleryPointing, alt: "Safety officer assessing high-rise construction site hazards" },
 ];
 
 const Gallery = () => {
