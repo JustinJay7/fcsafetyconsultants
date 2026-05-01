@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import helmetIcon from "@/assets/helmet-icon.png";
+import helmetIcon from "@/assets/helmet-logo-card.jpg";
 
 type NavLink = {
   label: string;
