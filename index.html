@@ -53,25 +53,6 @@
     }
     </script>
 
-    <!-- Redirect alternate domains to canonical, but allow GitHub Pages and previews -->
-    <script>
-      (function() {
-        var canonical = "www.fcsafetyconsultants.co.za";
-        var host = window.location.hostname;
-        var allowed = (
-          host === "localhost" ||
-          host === "127.0.0.1" ||
-          host.endsWith(".lovable.app") ||
-          host.endsWith(".lovableproject.com") ||
-          host.endsWith(".github.io") ||
-          host === "fcsafetyconsultants.github.io" ||
-          host === canonical
-        );
-        if (!allowed) {
-          window.location.replace("https://" + canonical + window.location.pathname + window.location.search);
-        }
-      })();
-    </script>
     <meta property="og:title" content="FC Safety Consultants Pty Ltd | Health and Safety Officers South Africa">
   <meta name="twitter:title" content="FC Safety Consultants Pty Ltd | Health and Safety Officers South Africa">
   <meta property="og:description" content="FC Safety Consultants Pty Ltd — Fully registered Health and Safety officers in South Africa. Onsite safety, auditing, compliance files, incident investigation.">
