@@ -16,6 +16,7 @@ import galleryCrane from "@/assets/gallery-crane-hd.jpg";
 import galleryDuctwork from "@/assets/gallery-ductwork-hd.jpg";
 import galleryTeam from "@/assets/gallery-team-hd.jpg";
 import galleryPointing from "@/assets/gallery-pointing-hd.jpg";
+import galleryFcLogo from "@/assets/gallery-fc-logo-hd.jpg";
 
 const photos = [
   { src: hero1, alt: "FC Safety team reviewing site plans" },
@@ -28,6 +29,7 @@ const photos = [
   { src: galleryDuctwork, alt: "FC Safety officer inspecting ductwork installation on site" },
   { src: galleryTeam, alt: "FC Safety Consultants team on site in branded PPE" },
   { src: galleryPointing, alt: "Safety officer assessing high-rise construction site hazards" },
+  { src: galleryFcLogo, alt: "FC Safety Consultants — Safety First branded logo" },
 ];
 
 const Gallery = () => {
