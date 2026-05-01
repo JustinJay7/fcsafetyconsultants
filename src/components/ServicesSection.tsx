@@ -93,7 +93,7 @@ const ServiceCard = ({ service, index }: { service: typeof services[0]; index: n
   const cardStyles = [
     { border: "border-yellow-400 hover:border-yellow-400", glow: "rgba(250, 204, 21, 0.9)" },        // 0 Safety Reps
     { border: "border-safety-blue hover:border-safety-blue", glow: "rgba(20, 130, 184, 0.9)" },      // 1 H&S Files
-    { border: "border-accent hover:border-accent", glow: "rgba(180, 200, 220, 0.9)" },               // 2 Site Auditing
+    { border: "border-slate-800 hover:border-slate-800", glow: "rgba(15, 23, 42, 0.9)" },             // 2 Site Auditing
     { border: "border-destructive hover:border-destructive", glow: "rgba(239, 68, 68, 0.9)" },       // 3 Incident
     { border: "border-purple-500 hover:border-purple-500", glow: "rgba(168, 85, 247, 0.9)" },        // 4 Dept Labour
     { border: "border-foreground hover:border-foreground", glow: "rgba(15, 23, 42, 0.85)" },         // 5 Safety Docs
