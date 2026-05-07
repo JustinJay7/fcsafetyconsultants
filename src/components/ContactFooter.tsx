@@ -40,8 +40,14 @@ const ContactFooter = () => {
             </div>
             <div className="flex items-center gap-3">
               <Mail size={18} />
-              <a href="mailto:info@fcsafetyconsultants.co.za" className="hover:text-primary transition-colors">
-                info@fcsafetyconsultants.co.za
+              <a href="mailto:fcsafetyconsultants@outlook.com" className="hover:text-primary transition-colors">
+                fcsafetyconsultants@outlook.com
+              </a>
+            </div>
+            <div className="flex items-center gap-3">
+              <Mail size={18} />
+              <a href="mailto:dcsafetyconsultants@outlook.com" className="hover:text-primary transition-colors">
+                dcsafetyconsultants@outlook.com
               </a>
             </div>
           </div>
