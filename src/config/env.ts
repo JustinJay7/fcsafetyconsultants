@@ -23,7 +23,7 @@ export const env = {
 
   siteUrl: getEnv("VITE_SITE_URL", "https://www.fcsafetyconsultants.co.za"),
   apiUrl: getEnv("VITE_API_URL", ""),
-  contactEmail: getEnv("VITE_CONTACT_EMAIL", "info@fcsafetyconsultants.co.za"),
+  contactEmail: getEnv("VITE_CONTACT_EMAIL", "fcsafetyconsultants@outlook.com"),
 } as const;
 
 export { getEnv, requireEnv };
